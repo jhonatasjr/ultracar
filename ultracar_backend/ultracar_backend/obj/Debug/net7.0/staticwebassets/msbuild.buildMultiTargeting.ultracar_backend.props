@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ultracar_backend.props" />
+</Project>
