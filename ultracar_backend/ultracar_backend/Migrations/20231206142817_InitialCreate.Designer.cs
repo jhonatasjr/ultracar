@@ -12,7 +12,7 @@ using ultracar_backend.Infraestrutura;
 namespace ultracarbackend.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20231206105642_InitialCreate")]
+    [Migration("20231206142817_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -105,6 +105,9 @@ namespace ultracarbackend.Migrations
 
                     b.Property<int>("IdFuncionarioResponsavel")
                         .HasColumnType("integer");
+
+                    b.Property<decimal>("ValorTotal")
+                        .HasColumnType("decimal(10, 2)");
 
                     b.HasKey("Id");
 

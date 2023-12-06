@@ -53,6 +53,7 @@ namespace ultracarbackend.Migrations
                     IdCliente = table.Column<int>(type: "integer", nullable: false),
                     IdFuncionarioResponsavel = table.Column<int>(type: "integer", nullable: false),
                     DescricaoServico = table.Column<string>(type: "text", nullable: false),
+                    ValorTotal = table.Column<decimal>(type: "numeric(10,2)", nullable: false),
                     DtInicioServico = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     DtFimServico = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },

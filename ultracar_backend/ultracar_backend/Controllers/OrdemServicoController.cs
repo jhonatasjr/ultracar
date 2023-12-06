@@ -23,7 +23,14 @@ namespace ultracar_backend.Controllers
             {
                 var DtInicio = Convert.ToDateTime(ordemServico.DtInicioServico).ToUniversalTime();
                 var DtFim = Convert.ToDateTime(ordemServico.DtFimServico).ToUniversalTime();
+                decimal valorTotalOP = 0.00m;
 
+                var contemItens = ordemServico.OrdemServicoItens.Any();
+
+                if (contemItens)
+                {
+                    valorTotalOP = ordemServico.OrdemServicoItens.Sum(x => x.ValorTotal);
+                }
 
                 var novaOrdemProducao = new OrdemServico
                 {
@@ -32,21 +39,26 @@ namespace ultracar_backend.Controllers
                     DescricaoServico = ordemServico.DescricaoServico,
                     DtInicioServico = DtInicio,
                     DtFimServico = DtFim,
+                    ValorTotal = valorTotalOP
                 };
 
                 _repository.AdicionarOP(novaOrdemProducao);
 
-                foreach (var item in ordemServico.OrdemServicoItens)
+                if (contemItens)
                 {
-                    var novoOrdemProducaoItem = new OrdemServicoItens
-                    {
-                        IdOrdemServico = novaOrdemProducao.Id,
-                        IdProduto = item.IdProduto,
-                        Quantidade = item.Quantidade,
-                        ValorTotal = item.ValorTotal,
-                    };
 
-                    _repository.AdicionarOPItem(novoOrdemProducaoItem);
+                    foreach (var item in ordemServico.OrdemServicoItens)
+                    {
+                        var novoOrdemProducaoItem = new OrdemServicoItens
+                        {
+                            IdOrdemServico = novaOrdemProducao.Id,
+                            IdProduto = item.IdProduto,
+                            Quantidade = item.Quantidade,
+                            ValorTotal = item.ValorTotal,
+                        };
+
+                        _repository.AdicionarOPItem(novoOrdemProducaoItem);
+                    }
                 }
 
                 return Ok();

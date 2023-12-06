@@ -103,6 +103,9 @@ namespace ultracarbackend.Migrations
                     b.Property<int>("IdFuncionarioResponsavel")
                         .HasColumnType("integer");
 
+                    b.Property<decimal>("ValorTotal")
+                        .HasColumnType("decimal(10, 2)");
+
                     b.HasKey("Id");
 
                     b.ToTable("OrdemServico");
