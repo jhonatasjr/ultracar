@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "62PyGQI9C16Fa9d2oK0ON18nsr5J6d8MKuc5hfoN18Zj8yOEeO+dz1nazF0KAilSKKoQeqoJ/FdPLeJJ+mMKog==",
+  "dgSpecHash": "/XosKAF8qMgJLV67Dy9kwqWfbcGXh12aXFg+FjDOd7lkeByjkoLPQ7hLH8OLvm+d3vXk4vP991h/QyHYR3Uukw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jhona\\Desktop\\PRATICA\\ultracar_backend\\ultracar_backend\\ultracar_backend.csproj",
+  "projectFilePath": "C:\\Users\\jhona\\Desktop\\PRATICA\\ultracar\\ultracar_backend\\ultracar_backend\\ultracar_backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jhona\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\jhona\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.10\\microsoft.aspnetcore.openapi.7.0.10.nupkg.sha512",
